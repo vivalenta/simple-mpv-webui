@@ -1,0 +1,16 @@
+[playlist]
+NumberOfEntries=8
+#EXTM3U
+#PLAYLIST:Playlist Name
+#EXTINF:File1, do
+File1=http://uk7.internet-radio.com:8226/
+#PulseEDM Dance Music Radio The BEST Mix of Electronic Dance Music
+File2=http://pulseedm.cdnstream1.com:8124/1373_128
+File3=http://online-radiorelax2.tavrmedia.ua/RadioRelax_Int
+File4=http://online-radiorelax2.tavrmedia.ua/RadioRelax_Instrumental
+File5=http://online-radiorelax.tavrmedia.ua/RadioRelax
+File6=http://online-hitfm2.tavrmedia.ua/HitFM_Best
+#Internet Radio POP HD
+File7=http://server.internetradiohd.com/stream11
+#Undergroundfm 
+File8=http://uk1.internet-radio.com:8118/
