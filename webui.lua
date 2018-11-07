@@ -6,7 +6,7 @@ local dec64 = require("mime").decode("base64")
 local msg_prefix = "[webui] "
 
 local options = {
-  port = 8080,
+  port = 8081,
   disable = false,
   logging = false,
   ipv4 = true,
