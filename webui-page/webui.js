@@ -129,8 +129,6 @@ function setTrackList(tracklist) {
       }
     }
   }
-  document.getElementById("nextSub").innerText = 'Next sub ' + window.subs.selected + '/' + window.subs.count;
-  document.getElementById("nextAudio").innerText = 'Next audio ' + window.audios.selected + '/' + window.audios.count;
 }
 
 function setMetadata(metadata, playlist, filename) {
@@ -152,29 +150,25 @@ function setMetadata(metadata, playlist, filename) {
   // 2. metadata['title']
   // 3. metadata['TITLE']
   // 4. filename
-  if (pl_title) {
-    window.metadata.title = track + pl_title;
-  } else if (metadata['title']) {
-    window.metadata.title = track + metadata['title'];
-  } else if (metadata['TITLE']) {
-    window.metadata.title = track + metadata['TITLE'];
-  } else {
-    window.metadata.title = track + filename;
-  }
+  if (pl_title) { window.metadata.title = track + pl_title;  } 
+  else if (metadata['icy-title']) { window.metadata.title = track + metadata['icy-title']; }  
+  else if (metadata['title']) { window.metadata.title = track + metadata['title']; }  
+  else if (metadata['TITLE']) { window.metadata.title = track + metadata['TITLE']; }
+  else { window.metadata.title = track + filename; }
 
   // set the artist
-  if (metadata['artist']) {
-    window.metadata.artist = metadata['artist'];
-  } else {
-    window.metadata.artist = ''
-  }
+  if (metadata['artist']) { window.metadata.artist = metadata['artist']; } 
+  else if (metadata['icy-artist']) { window.metadata.artist = track + metadata['icy-artist']; }  
+  else if (metadata['icy-genre']) { window.metadata.artist = track + metadata['icy-genre']; }  
+  else { window.metadata.artist = '' }
 
   // set the album
   if (metadata['album']) {
     window.metadata.album = metadata['album'];
-  } else {
-    window.metadata.album = ''
   }
+  else if (metadata['icy-album']) { window.metadata.album = track + metadata['icy-album']; }
+  else if (metadata['icy-description']) { window.metadata.album = track + metadata['icy-description']; }
+  else { window.metadata.album = '' }
 
   document.getElementById("title").innerHTML = window.metadata.title;
   document.getElementById("artist").innerHTML = window.metadata.artist;
